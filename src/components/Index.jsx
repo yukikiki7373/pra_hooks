@@ -20,27 +20,16 @@ const Index = () =>{
 
     return(
         <>
-            <p>index components</p>
-            {console.log(username)}
-            <table style={{
-                textAlign: "center"
-            }}>
-                <thead>
-                    <tr>
-                        <td>key</td>
-                        <td>value</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {Object.keys(username).map((key)=>{
-                        <tr>
-                            <td>{key}</td>
-                            <td>{username[key]}</td>
-                        </tr>
-                    })}
-                </tbody>
-            </table>
             {username["name"]}
+            <hr />
+            {username["received_events_url"]}
+            {Object.keys(username).map((key)=>{
+                <div>
+                    <p>{key}</p>
+                    <p>{username[key]}</p>
+                </div>
+                console.log("key", key, "value:", username[key])
+            })}
         </>
     )
 }
